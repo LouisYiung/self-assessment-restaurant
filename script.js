@@ -1,6 +1,6 @@
 //While attempting to implement the Carousel on to my page, my javascript inexplicably would not comply with handling the the querySelector function.
 //
-function modulo(number, mod) {
+/*function modulo(number, mod) {
     let result = number % mod;
     if (number < 0) {
         result += mod;
@@ -26,4 +26,4 @@ const numSlides = slidesContainer.children.length;
 let currentSlide = 0;
 
 ButtonPrevious.addEventListener('click', handlePrevious());
-ButtonNext.addEventListener('click', handleNext());
+ButtonNext.addEventListener('click', handleNext());*/
