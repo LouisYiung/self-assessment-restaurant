@@ -15,14 +15,14 @@
 </head>
 
 <body>
-    <noscript>
+    <noscript><!-- a message for people to enable java script-->
         JavaScript is not enabled. Please use another browser, or enable JavaScript.
     </noscript>
     <header class="jumbotron"></header>
     <div class="carousel" data-carousel>
         <div class="carousel-buttons">
-            <button id="carousel-button carousel-button-previous" data-carousel-button-previous><i class="fas fa-chevron-circle-left"></i></button>
-            <button class="carousel-button carousel-button-next" data-carousel-button-next><i class="fas fa-chevron-circle-right"></i></button>
+            <button class="carousel-button carousel-button-previous" id="carousel-button carousel-button-previous" data-carousel-button-previous><i class="fas fa-chevron-circle-left"></i></button>
+            <button class="carousel-button carousel-button-next" id="carousel-button carousel-button-next" data-carousel-button-next><i class="fas fa-chevron-circle-right"></i></button>
         </div>
         <div class="slides" data-carousel-slides-container>
             <div class="slide">
@@ -60,7 +60,8 @@
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./script.js" async defer>
+    </script>
 
 </body>
 <footer>
