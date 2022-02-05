@@ -1,13 +1,10 @@
  // i do understand this regex is not exhaustive and disallows emails such as ....@...com and excludes lots of punctuations and other characters, but i feel for an assignment such as this; this regex is enough
  const emailRegex = /[0-9a-zA-Z]+@[0-9a-zA-Z]+.{2,3}[a-z]/;
- const emailInput = document.querySelector("[data-Email]");
- const submitButton = document.querySelector('[data-Submit]');
+ const submitButton = document.querySelector('[data_Submit]');
  const resetButton = document.querySelector("[data-Reset]");
 
  function validateEmail() {
-     var edValue = document.querySelector("data-Email");
-     var s = edValue.value;
-     if (s.value.match(emailRegex)) {
+     if (!document.querySelector("[data_Email]").value.match(emailRegex)) {
          alert("this email is not valid.");
      } else {
          alert("this email is valid.")
@@ -27,8 +24,15 @@
  function resetForm() {
      var inputs = document.getElementsByTagName('input');
      for (var i = 0; i < inputs.length; i += 1) {
-         inputs[i].value = '';
+         if (inputs[i].type == "text" || inputs[i].type == "email") {
+             inputs[i].value = '';
+         }
+         if (inputs[i].type == "checkbox" || inputs[i].type == "radio") {
+             inputs[i].checked = false;
+         }
+         document.querySelector("[data_Reason]").value = "default";
      }
  }
 
  submitButton.addEventListener('click', validateEmail);
+ resetButton.addEventListener('click', resetForm);

@@ -36,14 +36,14 @@
                     </div>
                     <div class="col-sm-4">
                         <!--<label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" onKeyup=validateEmail() required>-->
-                        <label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" required>
+                        <label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" data_Email required>
                     </div>
                     <div class="col-sm-4">
                         <label class="required">Phone: </label><span> </span><input type="phone" class='form-control' id="Phone" name="Phone" required>
                     </div>
                 </div>
                 <label>Reason for inquiry: </label>
-                <select class="form-control">
+                <select class="form-control" data_Reason>
                         <option value="default" selected>Catering</option>
                         <option value="Private Party">Private Party</option>
                         <option value="Feedback">Feedback</option>
@@ -82,8 +82,8 @@
                 </div>
                 <label for="info">Additional Information:</label>
                 <textarea class="form-control" id="info" name="info"></textarea><br>
-                <input type="submit" text="Send Request" id="submit" onclick="validateEmail">
-                <input type="button" onclick="resetForm" value="Reset">
+                <input type="submit" value="Send Request" data_Submit>
+                <input type="button" onclick="resetForm" value="Reset" data-Reset>
             </form>
     </section>
     <script src="./contact-us.js" async defer>
