@@ -1,21 +1,34 @@
-//this is just a copy paste of the javascript code that is on the contact us page.
-//I alsow understand that it is generally a better standard to seperate the the javascript from the page as it saves time to debug and maintain
-//if i were better, i would be able to make this work as such, but due to constraints on time and my want to submit this asap, i am going with the on page implementation 
+ // i do understand this regex is not exhaustive and disallows emails such as ....@...com and excludes lots of punctuations and other characters, but i feel for an assignment such as this; this regex is enough
+ const emailRegex = /[0-9a-zA-Z]+@[0-9a-zA-Z]+.{2,3}[a-z]/;
+ let button = document.getElementById("submit");
 
-const emailRegex = /[0-9a-zA-Z]+@[0-9a-zA-Z]+.{2,3}[a-z]/;
-let button = document.getElementById("submit");
+ function validateEmail() {
+     var edValue = document.getElementById("Email");
+     var s = edValue.value;
+     console.log("submit was pressed")
+     if (!document.getElementById("Email").value.match(emailRegex)) {
+         alert("this email is not valid.");
+     } else {
+         alert("this email is valid.")
+     }
+     /* this is a version of the code that runs on typing up the email, that check on each keystroke whether or not the email is valid
+     if (!document.getElementById("Email").value.match(emailRegex)) {
+         button.disabled = true;
+     } else {
+         button.disabled = false;
+     }*/
+ }
 
-function validateEmail() {
-    var edValue = document.getElementById("Email");
-    var s = edValue.value;
+ /*function submitFunction() {
+     alert("form is good, form is submitted");
+ }*/
 
-    if (!document.getElementById("Email").value.match(emailRegex)) {
-        button.disabled = true;
-    } else {
-        button.disabled = false;
-    }
-}
+ function resetForm() {
+     var inputs, index;
 
-function submitFunction() {
-    alert("form is good, form is submitted");
-}
+     inputs = document.getElementsByTagName('input');
+     for (index = 0; index < inputs.length; ++index) {
+         console.log(index);
+         //inputs[index].value = false;
+     }
+ }

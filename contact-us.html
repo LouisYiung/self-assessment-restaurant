@@ -35,7 +35,8 @@
                         <label class="required">Name: </label><span> </span><input type="text" class='form-control' id="Name" name="Name" required>
                     </div>
                     <div class="col-sm-4">
-                        <label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" onKeyup=validateEmail() required>
+                        <!--<label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" onKeyup=validateEmail() required>-->
+                        <label class="required" id="email-label">Email: </label><span> </span><input type="email" class='form-control' id="Email" name="Email" required>
                     </div>
                     <div class="col-sm-4">
                         <label class="required">Phone: </label><span> </span><input type="phone" class='form-control' id="Phone" name="Phone" required>
@@ -81,29 +82,11 @@
                 </div>
                 <label for="info">Additional Information:</label>
                 <textarea class="form-control" id="info" name="info"></textarea><br>
-                <input type="submit" text="Send Request" id="submit" onclick="submitFunction()" disabled>
-
+                <input type="submit" text="Send Request" id="submit" onclick="validateEmail">
+                <input type="button" onclick="resetForm" value="Reset">
             </form>
     </section>
-    <script async defer>
-        // i do understand this regex is not exhaustive and disallows emails such as ....@...com and excludes lots of punctuations and other characters, but i feel for an assignment such as this; this regex is enough
-        const emailRegex = /[0-9a-zA-Z]+@[0-9a-zA-Z]+.{2,3}[a-z]/;
-        let button = document.getElementById("submit");
-
-        function validateEmail() {
-            var edValue = document.getElementById("Email");
-            var s = edValue.value;
-
-            if (!document.getElementById("Email").value.match(emailRegex)) {
-                button.disabled = true;
-            } else {
-                button.disabled = false;
-            }
-        }
-
-        function submitFunction() {
-            alert("form is good, form is submitted");
-        }
+    <script src="./contact-us.js" async defer>
     </script>
 </body>
 <footer>
