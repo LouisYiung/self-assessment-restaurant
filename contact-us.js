@@ -31,6 +31,7 @@
              inputs[i].checked = false;
          }
          document.querySelector("[data_Reason]").value = "default";
+         document.querySelector("[data_Info]").value = "";
      }
  }
 
